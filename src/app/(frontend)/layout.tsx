@@ -1,21 +1,21 @@
 import type { Metadata } from 'next'
 
-import { cn } from 'src/utilities/cn'
 import { GeistMono } from 'geist/font/mono'
 import { GeistSans } from 'geist/font/sans'
 import React from 'react'
+import { cn } from 'src/utilities/cn'
 
 import { AdminBar } from '@/components/AdminBar'
+import { LivePreviewListener } from '@/components/LivePreviewListener'
 import { Footer } from '@/Footer/Component'
 import { Header } from '@/Header/Component'
-import { LivePreviewListener } from '@/components/LivePreviewListener'
 import { Providers } from '@/providers'
 import { InitTheme } from '@/providers/Theme/InitTheme'
 import { mergeOpenGraph } from '@/utilities/mergeOpenGraph'
 import { draftMode } from 'next/headers'
 
-import './globals.css'
 import { getServerSideURL } from '@/utilities/getURL'
+import './globals.css'
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
   const { isEnabled } = await draftMode()
@@ -26,6 +26,11 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         <InitTheme />
         <link href="/favicon.ico" rel="icon" sizes="32x32" />
         <link href="/favicon.svg" rel="icon" type="image/svg+xml" />
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5938651528318065"
+          crossOrigin="anonymous"
+        ></script>
       </head>
       <body>
         <Providers>
